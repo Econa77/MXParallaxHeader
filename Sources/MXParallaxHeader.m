@@ -213,10 +213,8 @@ static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOCo
 - (void)setBottomModeConstraints {
     [self.view.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor].active = YES;
     [self.view.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor].active = YES;
-    [self.view.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor].active =  YES;
-    NSLayoutConstraint *constraint = [self.view.heightAnchor constraintEqualToConstant:self.height];
-    constraint.priority = UILayoutPriorityDefaultLow;
-    constraint.active = YES;
+    [self.view.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor].active = YES;
+    [self.view.heightAnchor constraintGreaterThanOrEqualToConstant:0].active = YES;
 }
 
 - (void)setContentViewConstraints {
